@@ -1,0 +1,212 @@
+! name: Computer Security Resources
+! description: Focus on computer security-focused resources
+! public: private
+! author: Brad Reaves
+! homepage: https://github.com/bradreaves/goggles
+! avatar: #66ff66
+! license: MIT
+
+! Cut out middlemen and parasites
+$discard,site=researchgate.net
+$discard,site=linkedin.com
+
+! Large CS scholarly databases
+
+$boost=5,site=ieeexplore.ieee.org
+$boost=5,site=dl.acm.org
+$boost=5,site=arxiv.org
+$boost=5,site=semanticscholar.org
+
+! Independent scholarly societies and publication venues
+
+|https://www.usenix.org/conference^$boost=5
+|https://www.ndss-symposium.org^$boost=5
+|https://sciendo.com/issue/POPETS^boost=5
+
+! Industry venues
+
+! TODO: BH/Defcon, RSA, B-sides, ...
+
+! For-profit scientific publishers
+
+$boost,site=onlinelibrary.wiley.com
+$boost,site=sciencedirect.com
+
+! Authoritative and Reference Document Sources
+
+|https://datatracker.ietf.org^$boost=5
+|https://www.itu.int/rec^$boost=5
+$boost=5,site=etsi.org
+$boost=4,site=books.google.com
+
+! Blogs by url
+
+|https://community.websense.com/blogs/securitylabs^$boost=2
+|https://computer.forensikblog.de/en^$boost=2
+|https://www.fireeye.com/blog^$boost=2
+|https://honeynet.org/blog^$boost=2
+|https://voipsa.org/blog^$boost=2
+|https://www.trendmicro.com/vinfo/us/security/news$boost=2
+
+! Tech News
+
+$boost=2,site=zdnet.com
+$boost=2,site=krebsonsecurity.com
+$boost=2,site=securityfocus.com
+$boost=2,site=wired.com
+$boost=2,site=arstechnica.com
+$boost=2,site=theregister.com
+$boost=2,site=darkreading.com
+$boost=2,site=thehackernews.com
+$boost=2,site=threatpost.com
+$boost=2,site=bleepingcomputer.com
+$boost=2,site=cybersecuritynews.com
+$boost=2,site=nakedsecurity.sophos.com
+
+! Govt Agencies
+
+$boost=3,site=cisa.gov
+$boost=3,site=cyber.gov.au
+$boost=3,site=ncsc.gov.uk
+$boost=3,site=csrc.nist.gov
+$boost=3,site=ftc.gov
+$boost=3,site=fcc.gov
+
+
+! Blogs by domain
+
+$boost=3,site=happyasamonkey.wordpress.com
+$boost=3,site=zscaler.com
+$boost=3,site=infosecisland.com
+$boost=3,site=schneier.com
+$boost=3,site=forensickb.com
+$boost=3,site=benthamsgaze.org
+$boost=3,site=profwoodward.org
+$boost=3,site=blog.cr.yp.to
+$boost=3,site=intotheboxes.wordpress.com
+$boost=3,site=ifsec.blogspot.com
+$boost=3,site=taosecurity.blogspot.com
+$boost=3,site=journeyintoir.blogspot.com
+$boost=3,site=security.googleblog.com
+$boost=3,site=smusec.blogspot.com
+$boost=3,site=forensicsfromthesausagefactory.blogspot.com
+$boost=3,site=ethicalhackernet.blogspot.com
+$boost=3,site=cybercrime101.com
+$boost=3,site=blog.cmdlabs.com
+$boost=3,site=misterreiner.wordpress.com
+$boost=3,site=blog.didierstevens.com
+$boost=3,site=offensivecomputing.net
+$boost=3,site=forensicsource.blogspot.com
+$boost=3,site=malwarecookbook.com
+$boost=3,site=blog.virustotal.com
+$boost=3,site=thedigitalstandard.blogspot.com
+$boost=3,site=moyix.blogspot.com
+$boost=3,site=holisticinfosec.blogspot.com
+$boost=3,site=blog.zynamics.com
+
+! Common popular magazines -- included for their frequent area overviews
+
+$boost=2,site=spectrum.ieee.org
+$boost=2,site=cacm.acm.org
+$boost=2,site=technologyreview.com
+|https://www.usenix.org/publications/loginonline^$boost=2
+|https://www.computer.org/csdl/magazine/sp^$boost=2
+
+! Boost non-profit eTLDs
+|https://*.org^$boost
+|https://*.org.uk^$boost
+! TODO: non-profit gTLDs 
+
+! Boost Government eTLDs and pages
+|https://*.gov^$boost
+|https://*.gov.uk^$boost
+|https://*.gc.ca^$boost
+$boost,site=canada.ca
+! TODO: gov gTLDs
+
+! Ranking adjustments for academic tlds listed on Wikipedia
+
+|https://*.ac.uk^$boost
+|https://*.ac.at^$boost
+|https://*.ac.bd^$boost
+|https://*.ac.be^$boost
+|https://*.ac.bw^$boost
+|https://*.ac.ca^$boost
+|https://*.ac.cn^$boost
+|https://*.ac.cr^$boost
+|https://*.ac.cy^$boost
+|https://*.ac.fj^$boost
+|https://*.ac.in^$boost
+|https://*.ac.id^$boost
+|https://*.ac.ir^$boost
+|https://*.ac.il^$boost
+|https://*.ac.jp^$boost
+|https://*.ac.ke^$boost
+|https://*.ac.ma^$boost
+|https://*.ac.nz^$boost
+|https://*.ac.pg^$boost
+|https://*.ac.rw^$boost
+|https://*.ac.rs^$boost
+|https://*.ac.za^$boost
+|https://*.ac.kr^$boost
+|https://*.ac.ss^$boost
+|https://*.ac.lk^$boost
+|https://*.ac.tz^$boost
+|https://*.ac.th^$boost
+|https://*.ac.ug^$boost
+|https://*.ac.uk^$boost
+|https://*.ac.ae^$boost
+|https://*.ac.zm^$boost
+|https://*.ac.zw^$boost
+
+|https://*.edu^$boost
+|https://*.edu.ag^$boost
+|https://*.edu.ar^$boost
+|https://*.edu.au^$boost
+|https://*.edu.bd^$boost
+|https://*.edu.br^$boost
+|https://*.edu.bn^$boost
+|https://*.edu.ca^$boost
+|https://*.edu.cn^$boost
+|https://*.edu.co^$boost
+|https://*.edu.dj^$boost
+|https://*.edu.ec^$boost
+|https://*.edu.eg^$boost
+|https://*.edu.sv^$boost
+|https://*.edu.er^$boost
+|https://*.edu.ee^$boost
+|https://*.edu.et^$boost
+|https://*.edu.gh^$boost
+|https://*.edu.gt^$boost
+|https://*.edu.hk^$boost
+|https://*.edu.it^$boost
+|https://*.edu.in^$boost
+|https://*.edu.jm^$boost
+|https://*.edu.jo^$boost
+|https://*.edu.lb^$boost
+|https://*.edu.ly^$boost
+|https://*.edu.mo^$boost
+|https://*.edu.my^$boost
+|https://*.edu.mt^$boost
+|https://*.edu.mx^$boost
+|https://*.edu.np^$boost
+|https://*.edu.ni^$boost
+|https://*.edu.ng^$boost
+|https://*.edu.om^$boost
+|https://*.edu.pk^$boost
+|https://*.edu.pe^$boost
+|https://*.edu.ph^$boost
+|https://*.edu.pl^$boost
+|https://*.edu.qa^$boost
+|https://*.edu.sa^$boost
+|https://*.edu.rs^$boost
+|https://*.edu.sg^$boost
+|https://*.edu.so^$boost
+|https://*.edu.es^$boost
+|https://*.edu.lk^$boost
+|https://*.edu.sd^$boost
+|https://*.edu.tw^$boost
+|https://*.edu.tr^$boost
+|https://*.edu.ua^$boost
+|https://*.edu.uy^$boost
+|https://*.edu.vn^$boost
