@@ -4,7 +4,7 @@
 ! author: Brad Reaves
 ! homepage: https://github.com/bradreaves/goggles
 ! avatar: #00A8E0
-
+! license: MIT
 
 ! Cut out middlemen
 $discard,site=researchgate.net
@@ -23,14 +23,17 @@ $boost=6,site=semanticscholar.org
 |https://www.ndss-symposium.org^$boost=8
 |https://sciendo.com/issue/POPETS^boost=8
 
-! Authoritative Document Sources
+! For-profit publishers
+
+$boost=4,site=onlinelibrary.wiley.com
+$boost=4,site=sciencedirect.com
+
+! Authoritative and Reference Document Sources
 
 |https://datatracker.ietf.org^$boost=5
 |https://www.itu.int/rec^$boost=5
 $boost=5,site=etsi.org
-
-
-
+$boost=4,site=books.google.com
 
 ! Common popular magazines -- included for their frequent area overviews
 
@@ -38,6 +41,22 @@ $boost=2,site=spectrum.ieee.org
 $boost=2,site=cacm.acm.org
 $boost=2,site=technologyreview.com
 |https://www.usenix.org/publications/loginonline,$boost=2
+
+! Downrank for-profit eTLDs
+|https://*.com^$downrank
+|https://*.co^$downrank
+|https://*.co.uk^$downrank
+
+! Boost non-profit eTLDs
+|https://*.org^$boost
+|https://*.org.uk^$boost
+
+
+! Boost Government eTLDs and pages
+|https://*.gov^$boost
+|https://*.gov.uk^$boost
+|https://*.gc.ca^$boost
+$boost,site:canada.ca
 
 ! Ranking adjustments for academic tlds
 
