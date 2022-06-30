@@ -1,0 +1,46 @@
+! name: Scholarly CS Resources
+! description: Focus and rerank search queries to emphasize scholarly sources for computer science 
+! public: private
+! author: Brad Reaves
+! homepage: https://github.com/bradreaves/goggles
+! avatar: #00A8E0
+
+
+! Cut out middlemen
+$discard,site=researchgate.net
+
+
+! Large CS databases
+
+$boost=8,site=ieeexplore.ieee.org
+$boost=8,site=dl.acm.org
+$boost=6,site=arxiv.org
+$boost=6,site=semanticscholar.org
+
+! Independent societies and publication venues
+
+|https://www.usenix.org/conference^$boost=8
+|https://www.ndss-symposium.org^$boost=8
+|https://sciendo.com/issue/POPETS^boost=8
+
+! Authoritative Document Sources
+
+|https://datatracker.ietf.org^$boost=5
+|https://www.itu.int/rec^$boost=5
+$boost=5,site=etsi.org
+
+
+
+
+! Common popular magazines -- included for their frequent area overviews
+
+$boost=2,site=spectrum.ieee.org
+$boost=2,site=cacm.acm.org
+$boost=2,site=technologyreview.com
+|https://www.usenix.org/publications/loginonline,$boost=2
+
+! Ranking adjustments
+
+|https://*.edu^$boost
+|https://*.ac.uk^$boost
+
